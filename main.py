@@ -43,3 +43,26 @@ def learn_distribution(top_individuals, n):
 # ----------------------------
 def sample_new_individual(probabilities):
     return [1 if random.random() < p else 0 for p in probabilities]
+
+# ----------------------------
+# Step 7: Main EDA Loop
+# ----------------------------
+def eda_knapsack(weights, values, weight_limit, population_size, generations, top_k):
+    n = len(weights)  # Number of items
+    population = initialize_population(population_size, n)
+
+    for generation in range(generations):
+        top_individuals = select_top_individuals(
+            population, knapsack_fitness, top_k, weights, values, weight_limit
+        )
+        probabilities = learn_distribution(top_individuals, n)
+        population = [sample_new_individual(probabilities) for _ in range(population_size)]
+
+        best = max(population, key=lambda ind: knapsack_fitness(ind, weights, values, weight_limit))
+        best_fitness = knapsack_fitness(best, weights, values, weight_limit)
+
+        print(f"Generation {generation + 1}: Best Fitness = {best_fitness}, Best Individual = {best}")
+        print(f"Probabilities = {probabilities}")
+        print("-" * 50)
+
+    return max(population, key=lambda ind: knapsack_fitness(ind, weights, values, weight_limit))
