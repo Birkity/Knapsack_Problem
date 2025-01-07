@@ -66,3 +66,21 @@ def eda_knapsack(weights, values, weight_limit, population_size, generations, to
         print("-" * 50)
 
     return max(population, key=lambda ind: knapsack_fitness(ind, weights, values, weight_limit))
+
+# ----------------------------
+# Step 8: Run the Algorithm
+# ----------------------------
+if __name__ == "__main__":
+    # Define problem parameters
+    weights = [2, 3, 4, 5, 9]
+    values = [3, 4, 8, 8, 10]
+    weight_limit = 10
+    population_size = 10
+    generations = 20
+    top_k = 5
+
+    best_solution = eda_knapsack(weights, values, weight_limit, population_size, generations, top_k)
+    best_fitness = knapsack_fitness(best_solution, weights, values, weight_limit)
+
+    print("\nFinal Best Solution:", best_solution)
+    print("Final Fitness (Total Value):", best_fitness)
