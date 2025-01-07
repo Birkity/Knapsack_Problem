@@ -15,3 +15,9 @@ def knapsack_fitness(individual, weights, values, weight_limit):
 # ----------------------------
 def random_individual(n):
     return [random.randint(0, 1) for _ in range(n)]
+
+# ----------------------------
+# Step 3: Initialize Population
+# ----------------------------
+def initialize_population(pop_size, n):
+    return [random_individual(n) for _ in range(pop_size)]
