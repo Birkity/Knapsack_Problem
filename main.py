@@ -37,3 +37,9 @@ def learn_distribution(top_individuals, n):
         ones_count = sum(ind[i] for ind in top_individuals)
         probabilities[i] = ones_count / len(top_individuals)
     return probabilities
+
+# ----------------------------
+# Step 6: Sample New Individuals
+# ----------------------------
+def sample_new_individual(probabilities):
+    return [1 if random.random() < p else 0 for p in probabilities]
