@@ -27,3 +27,13 @@ def initialize_population(pop_size, n):
 # ----------------------------
 def select_top_individuals(population, fitness_func, k, weights, values, weight_limit):
     return sorted(population, key=lambda ind: fitness_func(ind, weights, values, weight_limit), reverse=True)[:k]
+
+# ----------------------------
+# Step 5: Learn Probability Distribution
+# ----------------------------
+def learn_distribution(top_individuals, n):
+    probabilities = [0.0] * n
+    for i in range(n):
+        ones_count = sum(ind[i] for ind in top_individuals)
+        probabilities[i] = ones_count / len(top_individuals)
+    return probabilities
