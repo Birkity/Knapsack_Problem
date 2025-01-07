@@ -21,3 +21,9 @@ def random_individual(n):
 # ----------------------------
 def initialize_population(pop_size, n):
     return [random_individual(n) for _ in range(pop_size)]
+
+# ----------------------------
+# Step 4: Select Top Individuals
+# ----------------------------
+def select_top_individuals(population, fitness_func, k, weights, values, weight_limit):
+    return sorted(population, key=lambda ind: fitness_func(ind, weights, values, weight_limit), reverse=True)[:k]
