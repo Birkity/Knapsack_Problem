@@ -1,6 +1,6 @@
 ### 🛍️ Knapsack Problem Solver Using EDA 🧠
 
-A Python implementation of the **Knapsack Problem** using the **Estimation of Distribution Algorithm (EDA)**. Optimize the selection of items to maximize value without exceeding the weight limit!
+A Python implementation of the **Knapsack Problem** using the **Estimation of Distribution Algorithm (EDA)**. Optimize the selection of items to maximize value without exceeding the weight limit
 
 ---
 
@@ -17,7 +17,7 @@ A Python implementation of the **Knapsack Problem** using the **Estimation of Di
 1. **Clone the Repository**  
    ```bash
    git clone https://github.com/Birkity/Knapsack_Problem.git
-   cd knapsack-eda
+   cd main
    ```
 
 2. **Run the Script**  
